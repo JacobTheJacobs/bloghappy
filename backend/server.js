@@ -13,7 +13,7 @@ const adminRoutes = require("./routes/admin");
 
 //app
 const app = express();
-
+const port = process.env.PORT || 5000;
 //middleware
 app.use(bodyparser.json());
 app.use(cookieParser());
@@ -40,15 +40,15 @@ app.use(categoryRoutes);
 app.use(adminRoutes);
 
 if (process.env.NODE_ENV === "production") {
-  const __dirname = path.resolve();
-  app.use(express.static(path.join(__dirname, "frontend", "build")));
+  //const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, "frontend/build")));
   //app.use(cors(`${process.env.PPRODUCTION_URL}`));
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
   });
 }
 //port
-const port = process.env.PORT || 5000;
+
 app.listen(port, () => {
   console.log(` is running on port ${port}`);
 });

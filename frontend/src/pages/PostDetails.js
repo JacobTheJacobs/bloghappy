@@ -8,7 +8,7 @@ import { getCategories } from "../actions/category";
 import renderHTML from "react-render-html";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-const BASE_URL = process.env.REACT_APP_DEVELOPMENT_API;
+
 const QuillModules = {
   toolbar: [
     [{ header: "1" }, { header: "2" }, { header: [3, 4, 5, 6] }, { font: [] }],
@@ -278,7 +278,7 @@ const BlogUpdate = (props) => {
 
           {body && (
             <img
-              src={`${BASE_URL}/blog/photo/${query}`}
+              src={`/blog/photo/${query}`}
               alt={title}
               style={{ width: "100%" }}
             />

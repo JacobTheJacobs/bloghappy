@@ -133,7 +133,7 @@ const SingleBlog = (props) => {
                         <img
                           className="img img-fluid"
                           style={{ maxHeight: "auto", width: "100%" }}
-                          src={`${BASE_URL}/blog/photo/${blog.slug}`}
+                          src={`/blog/photo/${blog.slug}`}
                           alt={blog.title}
                         />
                       </a>
@@ -175,7 +175,7 @@ const SingleBlog = (props) => {
               <section>
                 <div className="row" style={{ marginTop: "30px" }}>
                   <img
-                    src={`${BASE_URL}/blog/photo/${blog.slug}`}
+                    src={`/blog/photo/${blog.slug}`}
                     alt={blog.title}
                     className="img img-fluid featured-image"
                     style={{
