@@ -278,7 +278,7 @@ const BlogUpdate = (props) => {
 
           {body && (
             <img
-              src={`api/blog/photo/${query}`}
+              src={`api/admin/blog/photo/${query}`}
               alt={title}
               style={{ width: "100%" }}
             />

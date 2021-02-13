@@ -6,7 +6,7 @@ export const create = (category, token) => {
   console.log(category);
   const request = axios
     .post(
-      `/api/category`,
+      `/api/category/category`,
       { name: category },
       {
         headers: {
@@ -24,7 +24,7 @@ export const create = (category, token) => {
 
 export const getCategories = () => {
   const request = axios
-    .get(`/api/categories`)
+    .get(`/api/category/categories`)
     .then((response) => {
       return response;
     })
@@ -45,7 +45,7 @@ export const singleCategory = (slug, token) => {
   console.log(token);
   const request = axios
     .post(
-      `/api/category/${slug}`,
+      `/api/category/category/${slug}`,
       { slug: slug },
       {
         headers: {
@@ -71,7 +71,7 @@ export const singleCategory = (slug, token) => {
 
 export const removeCategory = (slug, token) => {
   const request = axios
-    .delete(`/api/category/${slug}`, {
+    .delete(`/api/category/category/${slug}`, {
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${token}`,

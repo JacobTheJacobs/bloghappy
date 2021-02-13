@@ -4,7 +4,7 @@ const BASE_URL = process.env.REACT_APP_DEVELOPMENT_API;
 
 export const signin = (user) => {
   const request = axios
-    .post(`/signin`, user)
+    .post(`/api/auth/signin`, user)
     .then((res) => {
       return res;
     })
@@ -26,7 +26,7 @@ export const signout = (next) => {
   next();
 
   return axios
-    .get(`/signout`)
+    .get(`/api/auth/signout`)
     .then((response) => {
       console.log("signout success");
     })
