@@ -40,7 +40,7 @@ app.use(categoryRoutes);
 app.use(adminRoutes);
 
 if (process.env.NODE_ENV === "production") {
-  //const __dirname = path.resolve();
+  const __dirname = path.resolve();
   app.use(express.static(path.join(__dirname, "frontend/build")));
   //app.use(cors(`${process.env.PPRODUCTION_URL}`));
   app.get("/*", (req, res) => {
