@@ -43,7 +43,7 @@ if (process.env.NODE_ENV === "production") {
   //const __dirname = path.resolve();
   app.use(express.static(path.join(__dirname, "frontend/build")));
   //app.use(cors(`${process.env.PPRODUCTION_URL}`));
-  app.get("*", (req, res) => {
+  app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
   });
 }
