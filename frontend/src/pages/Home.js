@@ -129,7 +129,7 @@ const Home = () => {
                   height: "auto",
                   width: "100%",
                 }}
-                src={`${BASE_URL}/blog/photo/${blog.slug}`}
+                src={`api/blog/photo/${blog.slug}`}
                 alt={blog.title}
                 className="card-img-top"
                 alt="..."
@@ -180,7 +180,7 @@ const Home = () => {
 
               <img
                 style={{ maxHeight: "250px", width: "auto" }}
-                src={`${BASE_URL}/blog/photo/${blog.slug}`}
+                src={`api/blog/photo/${blog.slug}`}
                 alt={blog.title}
                 className="card-img-top"
                 alt="..."

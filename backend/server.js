@@ -35,9 +35,9 @@ if (process.env.NODE_ENV === "development") {
   app.use(cors(`${process.env.CLIENT_URL}`));
 }
 
-app.use(authRoutes);
-app.use(categoryRoutes);
-app.use(adminRoutes);
+app.use("/api", authRoutes);
+app.use("/api", categoryRoutes);
+app.use("/api", adminRoutes);
 
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();

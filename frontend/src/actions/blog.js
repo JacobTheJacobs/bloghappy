@@ -6,7 +6,7 @@ const BASE_URL = process.env.REACT_APP_DEVELOPMENT_API;
 //
 export const createBlog = (blog, token) => {
   const request = axios
-    .post(`/blog`, blog, {
+    .post(`/api/blog`, blog, {
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${token}`,
@@ -37,7 +37,7 @@ export const listBlogsWithCategoriesAndTags = (skip, limit) => {
   };
 
   const request = axios
-    .post(`/blogs-categories`, data, {
+    .post(`/api/blogs-categories`, data, {
       headers: {
         Accept: "application/json",
       },
@@ -62,7 +62,7 @@ export const listBlogsWithCategoriesAndTags = (skip, limit) => {
 //
 export const singleBlog = (slug) => {
   const request = axios
-    .get(`/blog/${slug}`)
+    .get(`/api/blog/${slug}`)
     .then((response) => {
       return response;
     })
@@ -83,7 +83,7 @@ export const singleBlog = (slug) => {
 //
 export const listRelated = (blog) => {
   const request = axios
-    .post(`/blogs/related`, blog, {
+    .post(`/api/blogs/related`, blog, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -109,7 +109,7 @@ export const listRelated = (blog) => {
 //
 export const list = () => {
   const request = axios
-    .get(`/blogs`)
+    .get(`/api/blogs`)
     .then((response) => {
       return response;
     })
@@ -130,7 +130,7 @@ export const list = () => {
 //
 export const removeBlog = (slug, token) => {
   const request = axios
-    .delete(`/blog/${slug}`, {
+    .delete(`/api/blog/${slug}`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -157,7 +157,7 @@ export const removeBlog = (slug, token) => {
 //
 export const updateBlog = (blog, token, slug) => {
   const request = axios
-    .put(`/blog/${slug}`, blog, {
+    .put(`/api/blog/${slug}`, blog, {
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${token}`,
